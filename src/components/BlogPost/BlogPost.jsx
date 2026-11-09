@@ -1,8 +1,15 @@
+import { useParams } from "react-router-dom";
 import "./BlogPost.css"
+import { posts } from "../../lib/posts";
 
-function BlogPost({ title, content }) {
+function BlogPost() {
+  const { blogId } = useParams();
+  const post = posts.find((value) => value.slug == blogId)
   function displayContent() {
-    var contentSections = content.split("\\");
+    if(!post){
+      return <div>Post not found</div>
+    }
+    var contentSections = post.content.split("\\");
     var nextClass = "";
     return contentSections.map((section) => {
       if (section == "codeblock") {
@@ -16,7 +23,7 @@ function BlogPost({ title, content }) {
   }
   return (
     <div>
-      <h3>{title}</h3>
+      <h3>{post && post.title}</h3>
       <div>{displayContent()}</div>
     </div>
   );
