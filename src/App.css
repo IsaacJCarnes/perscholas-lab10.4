@@ -1,0 +1,30 @@
+.list-none {
+  list-style-type: none;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-circle {
+  list-style-type: circle;
+}
+
+.list-square {
+  list-style-type: square;
+}
+
+.custom-button {
+  background-color: transparent;
+  border: 2px solid rgb(218, 216, 216);
+  border-radius: 5px;
+  color: whitesmoke;
+  margin: 5px;
+}
+
+.custom-button:hover {
+  color: rgb(218, 216, 216);
+}
+
+.blog-list-item {
+}

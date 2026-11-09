@@ -1,9 +1,5 @@
 function AdminPage({}) {
-  return (
-    <div>
-      
-    </div>
-  );
+  return <div>Welcome to the Admin Dashboard</div>;
 }
 
 export default AdminPage;

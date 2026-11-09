@@ -1,28 +1,29 @@
-import { useState } from "react";
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
-import BlogList from "./components/BlogList/BlogList";
-import BlogPost from "./components/BlogPost/BlogPost";
+import { Routes, Route } from "react-router-dom";
+
+import { posts } from "./lib/posts";
+import GuestRoute from "./components/GuestRoute/GuestRoute";
+import AuthRoute from "./components/AuthRoute/AuthRoute";
+import Header from "./components/Header/Header";
 import LoginPage from "./components/LoginPage/LoginPage";
 import AdminPage from "./components/AdminPage/AdminPage";
-import Header from "./components/Header/Header";
-import { posts } from "./lib/posts";
-import Navbar from "./components/Navbar/Navbar";
+import BlogList from "./components/BlogList/BlogList";
+import BlogPost from "./components/BlogPost/BlogPost";
 
 function App() {
   const post = posts[2];
   return (
     <>
-      <Navbar />
+      <Header />
       <Routes>
-        <Route
-          path="/blog"
-          element={<BlogList />}
-        />
-        <Route
-          path="/blog/:blogId"
-          element={<BlogPost title={post.title} content={post.content} />}
-        />
+        <Route element={<GuestRoute />}>
+          <Route path="/login" element={<LoginPage />} />
+        </Route>
+        <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/:blogId" element={<BlogPost />} />
+        <Route element={<AuthRoute />}>
+          <Route path="/admin" element={<AdminPage />} />
+        </Route>
       </Routes>
     </>
   );

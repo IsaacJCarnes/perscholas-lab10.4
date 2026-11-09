@@ -4,8 +4,8 @@ function BlogList({}) {
   return (
     <ul>
       {posts.map((value) => (
-        <li>
-          <Link id={value.id} to={`/blog/${value.slug}`}>
+        <li id={value.id}>
+          <Link  to={`/blog/${value.slug}`}>
             {value.title}
           </Link>
         </li>
