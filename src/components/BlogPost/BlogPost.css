@@ -1,6 +1,7 @@
 .post{
-    width: 600px;
+    max-width: 100%;
     white-space:pre;
     font-size: small;
     text-align: left;
+    text-wrap-mode: nowrap;
 }

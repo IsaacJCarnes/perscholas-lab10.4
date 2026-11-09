@@ -22,10 +22,10 @@ function BlogPost() {
     });
   }
   return (
-    <div>
+    <>
       <h3>{post && post.title}</h3>
-      <div>{displayContent()}</div>
-    </div>
+      <div className="post-content">{displayContent()}</div>
+    </>
   );
 }
 

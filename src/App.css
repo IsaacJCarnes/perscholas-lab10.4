@@ -1,19 +1,3 @@
-.list-none {
-  list-style-type: none;
-}
-
-.list-disc {
-  list-style-type: disc;
-}
-
-.list-circle {
-  list-style-type: circle;
-}
-
-.list-square {
-  list-style-type: square;
-}
-
 .custom-button {
   background-color: transparent;
   border: 2px solid rgb(218, 216, 216);
@@ -26,5 +10,47 @@
   color: rgb(218, 216, 216);
 }
 
-.blog-list-item {
+.codeblock {
+  background-color: rgb(5, 5, 10);
+  padding: 10px;
+}
+
+.post-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#BlogPage{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#BlogList {
+    margin: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+#BlogList > li {
+  text-align: left;
+  line-height: 1;
+  font-size: normal;
+  white-space: pre;
+  text-rendering: optimizeSpeed;
+}
+
+#BlogList > li::marker {
+  font-size: normal;
+  content: "├⎯ ";
+  font-family: "Courier New", Courier, monospace;
+}
+
+#BlogList > li:last-child::marker {
+  content: "└⎯ ";
+}
+
+#BlogList a{
+    text-decoration: none;
 }

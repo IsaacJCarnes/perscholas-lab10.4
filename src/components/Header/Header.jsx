@@ -17,7 +17,7 @@ function Header() {
               <button className="custom-button" onClick={logout}>Logout</button>
             </div>
           ) : (
-            <Link to="/login">Login</Link>
+            <Link to="/login"><button className="custom-button">Login</button></Link>
           )}
         </li>
       </ul>
